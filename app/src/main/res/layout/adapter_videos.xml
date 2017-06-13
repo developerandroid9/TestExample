@@ -23,6 +23,9 @@
             <TextView
                 android:id="@+id/nameTV"
                 android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_toEndOf="@+id/imageIV"
+                android:layout_toRightOf="@+id/imageIV"
                 android:layout_height="wrap_content"
                 android:text="Video Name"/>
         </RelativeLayout>

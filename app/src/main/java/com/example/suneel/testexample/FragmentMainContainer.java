@@ -21,7 +21,7 @@ public class FragmentMainContainer extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-//
+
 
         View root = inflater.inflate(R.layout.fragment_quick_contact, container, false);
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) root.findViewById(R.id.tabs);
@@ -61,35 +61,58 @@ public class FragmentMainContainer extends Fragment {
             super(fm);
             mContext = context;
         }
-
-        @Override
-        public int getCount() {
-            return ICONS.length;
-        }
-
         @Override
         public CharSequence getPageTitle(int position) {
             return TITLES[position];
         }
 
         @Override
+        public int getCount() {
+            return TITLES.length;
+        }
+
+        @Override
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return FragmentVideos.newInstance();
+                   return FragmentVideos.newInstance();
                 case 1:
                     return FragmentImages.newInstance();
                 case 2:
                     return FragmentMilstone.newInstance();
+
+                default:
+                    return new Fragment();
             }
-            return null;
         }
-
-
-        @Override
-        public boolean isViewFromObject(View v, Object o) {
-            return v == o;
-        }
+//        @Override
+//        public int getCount() {
+//            return ICONS.length;
+//        }
+//
+//        @Override
+//        public CharSequence getPageTitle(int position) {
+//            return TITLES[position];
+//        }
+//
+//        @Override
+//        public Fragment getItem(int position) {
+//            switch (position) {
+//                case 0:
+//                    return FragmentVideos.newInstance();
+//                case 1:
+//                    return FragmentImages.newInstance();
+//                case 2:
+//                    return FragmentMilstone.newInstance();
+//            }
+//            return null;
+//        }
+//
+//
+//        @Override
+//        public boolean isViewFromObject(View v, Object o) {
+//            return v == o;
+//        }
 
         @Override
         public View getCustomTabView(ViewGroup parent, int position) {

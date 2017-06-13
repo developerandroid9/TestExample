@@ -11,7 +11,19 @@ import android.widget.TextView;
 
 public class AdapterMileStone extends RecyclerView.Adapter<AdapterMileStone.MyViewHolder> {
 
+    private final int[] imageList = {
+            R.mipmap.select_video,
+            R.mipmap.select_image,
+            R.mipmap.select_milestone,
+            R.mipmap.select_video,
+            R.mipmap.select_image,
+            R.mipmap.select_milestone,
+            R.mipmap.select_video,
+            R.mipmap.select_image,
+            R.mipmap.select_milestone,
+            R.mipmap.select_milestone,
 
+    };
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView nameTV;
@@ -40,11 +52,12 @@ public class AdapterMileStone extends RecyclerView.Adapter<AdapterMileStone.MyVi
 
     @Override
     public void onBindViewHolder(AdapterMileStone.MyViewHolder holder, int position) {
-
+        holder.nameTV.setText("Milstone Name");
+        holder.imageIV .setImageResource(imageList[position]);
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return imageList.length;
     }
 }

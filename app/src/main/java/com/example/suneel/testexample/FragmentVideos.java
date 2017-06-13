@@ -28,15 +28,14 @@ import android.view.ViewGroup;
 
 public class FragmentVideos extends Fragment {
 
-    private static final String ARG_POSITION = "position";
+
 
 
 
 
 
     public static FragmentVideos newInstance() {
-        FragmentVideos f = new FragmentVideos();
-        return f;
+        return new FragmentVideos();
     }
 
     @Override
